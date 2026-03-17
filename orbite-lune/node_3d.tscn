@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bxrilgjlgkls1"]
 
+[ext_resource type="Script" uid="uid://dbf8m6swsngsk" path="res://Europe.gd" id="1_a202f"]
+
 [sub_resource type="Environment" id="Environment_4xowi"]
 background_mode = 1
 
@@ -27,7 +29,7 @@ radius = 0.1
 environment = SubResource("Environment_4xowi")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1513954166]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.1035624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3696313)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=741792308]
 
@@ -40,7 +42,8 @@ mesh = SubResource("SphereMesh_a202f")
 shape = SubResource("SphereShape3D_noarx")
 
 [node name="Europe_r1" type="RigidBody3D" parent="." unique_id=1835999092]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.489206, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8228974, 0, 0)
+script = ExtResource("1_a202f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Europe_r1" unique_id=908696574]
 mesh = SubResource("SphereMesh_4xowi")
@@ -49,7 +52,8 @@ mesh = SubResource("SphereMesh_4xowi")
 shape = SubResource("SphereShape3D_a202f")
 
 [node name="Europe_r2" type="RigidBody3D" parent="." unique_id=1978741697]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.916812, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5870733, 0, 0)
+script = ExtResource("1_a202f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Europe_r2" unique_id=276974537]
 mesh = SubResource("SphereMesh_noarx")
