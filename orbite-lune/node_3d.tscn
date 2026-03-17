@@ -41,12 +41,14 @@ mesh = SubResource("SphereMesh_a202f")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Jupiter" unique_id=193398045]
 shape = SubResource("SphereShape3D_noarx")
 
-[node name="Europe_r1" type="RigidBody3D" parent="." unique_id=1835999092]
+[node name="Europe_r1" type="RigidBody3D" parent="." unique_id=1835999092 node_paths=PackedStringArray("centre_de_rotation", "autre_moitié")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8228974, 0, 0)
 script = ExtResource("1_a202f")
 masse_europe = 2.4e+23
 r_p = 540012000.0
 v_p = 10644.75
+centre_de_rotation = NodePath("../Jupiter")
+"autre_moitié" = NodePath("../Europe_r2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Europe_r1" unique_id=908696574]
 mesh = SubResource("SphereMesh_4xowi")
@@ -54,12 +56,14 @@ mesh = SubResource("SphereMesh_4xowi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Europe_r1" unique_id=314107618]
 shape = SubResource("SphereShape3D_a202f")
 
-[node name="Europe_r2" type="RigidBody3D" parent="." unique_id=1978741697]
+[node name="Europe_r2" type="RigidBody3D" parent="." unique_id=1978741697 node_paths=PackedStringArray("centre_de_rotation", "autre_moitié")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5870733, 0, 0)
 script = ExtResource("1_a202f")
 masse_europe = 2.4e+22
 r_p = 789712000.0
 v_p = 17741.25
+centre_de_rotation = NodePath("../Jupiter")
+"autre_moitié" = NodePath("../Europe_r1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Europe_r2" unique_id=276974537]
 mesh = SubResource("SphereMesh_noarx")

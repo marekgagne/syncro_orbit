@@ -9,7 +9,7 @@ var k:float = 1e14
 var d:float = 249.7e6
 var coef_dissip:float = 4e16
 @export var centre_de_rotation: RigidBody3D
-
+@export var autre_moitié: RigidBody3D
 
 var G : float = 6.673e-11
 var position_relle:float
@@ -23,6 +23,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
 func calculer_acceleration_gravitationnelle(position_rellee: Vector3) -> Vector3:
+	var pos_autre_moitié = Vector3(autre_moitié.poition)
+	var r_diff= ( pos_autre_moitié- position_relle)
+	var r_diff_unit = Vector3(r_diff) / r_diff
 	var facteur = -G * masse_europe * masse_jupiter / (position_rellee.length()**3)
-	var force = (position_rellee - .position) * facteur
+	var force_rappel = k * (r_diff-d) * r_diff_unit
+	"faire frict."
+	var force = ((position_rellee - centre_de_rotation.position) * facteur)
+	return force / masse_europe
