@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bxrilgjlgkls1"]
+
+[sub_resource type="Environment" id="Environment_4xowi"]
+background_mode = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_a202f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_noarx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4xowi"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a202f"]
+radius = 0.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_noarx"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a0tk4"]
+radius = 0.1
+
+[node name="Node3D" type="Node3D" unique_id=1438143982]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1518982539]
+environment = SubResource("Environment_4xowi")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1513954166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.1035624)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=741792308]
+
+[node name="Jupiter" type="RigidBody3D" parent="." unique_id=971230948]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Jupiter" unique_id=216925336]
+mesh = SubResource("SphereMesh_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jupiter" unique_id=193398045]
+shape = SubResource("SphereShape3D_noarx")
+
+[node name="Europe_r1" type="RigidBody3D" parent="." unique_id=1835999092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.489206, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Europe_r1" unique_id=908696574]
+mesh = SubResource("SphereMesh_4xowi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Europe_r1" unique_id=314107618]
+shape = SubResource("SphereShape3D_a202f")
+
+[node name="Europe_r2" type="RigidBody3D" parent="." unique_id=1978741697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.916812, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Europe_r2" unique_id=276974537]
+mesh = SubResource("SphereMesh_noarx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Europe_r2" unique_id=582717262]
+shape = SubResource("SphereShape3D_a0tk4")
