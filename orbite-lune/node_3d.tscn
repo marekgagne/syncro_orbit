@@ -45,8 +45,8 @@ shape = SubResource("SphereShape3D_noarx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8228974, 0, 0)
 script = ExtResource("1_a202f")
 masse_europe = 2.4e+23
-r_p = 540012000.0
-v_p = 10644.75
+r_p_reelle = 4.0
+v_p_reelle = 4.0
 centre_de_rotation = NodePath("../Jupiter")
 "autre_moitié" = NodePath("../Europe_r2")
 
@@ -60,8 +60,8 @@ shape = SubResource("SphereShape3D_a202f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5870733, 0, 0)
 script = ExtResource("1_a202f")
 masse_europe = 2.4e+22
-r_p = 789712000.0
-v_p = 17741.25
+r_p_reelle = 4.0
+v_p_reelle = 4.0
 centre_de_rotation = NodePath("../Jupiter")
 "autre_moitié" = NodePath("../Europe_r1")
 
