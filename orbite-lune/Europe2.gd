@@ -70,15 +70,16 @@ func calculer_acceleration(position_reelle: Vector3, temps_dernier_ecran : float
 	print("r_d_u: ", r_diff_unit)
 	var r_diff_norme = r_diff.length()
 	var facteur = -G * masse_europe * masse_jupiter * ((position_reelle.length())**-3)
-	print("facteur: ", position_reelle * facteur)
-	var force_rappel = k * (r_diff_norme-d) * r_diff_unit
+
+	var force_rappel =  (r_diff_norme-d) * k * r_diff_unit
 	print("rappel: ", force_rappel.length() * r_diff_unit)
-	var force_frict = coef_dissip * (r_diff - r_diff_preced)/temps_dernier_ecran
+	var force_frict =((r_diff - r_diff_preced)/temps_dernier_ecran) * coef_dissip
 	print("frict", force_frict.length() * r_diff_unit)
 	var fg = position_reelle * facteur
 	var force = fg + force_rappel + force_frict
-	r_diff_preced += r_diff
-	print("force = ", force.length())
+	r_diff_preced = r_diff
+	print("fg: ", fg)
+	print("force = ", force)
 	return force / masse_europe
 
 func conv_position_reelle_a_simulee(position_reelle : Vector3) -> Vector3:
@@ -113,8 +114,8 @@ func appliquer_euler(temps_dernier_ecran : float) -> void:
 		#print("e = ", e)
 		#print("h = ", h)
 		
-		#print("r_p:", r_p_reelle)
+		print("r_p:", r_p_reelle)
 		#print("r_a:", r_a_reelle)
-		#print("r_p_s: ", r_p_simulee)
-		#print("r_a_s: ", r_a_simulee)
+		print("r_p_s: ", r_p_simulee)
+		print("r_a_s: ", r_a_simulee)
 		#print("e: ", excentricite)

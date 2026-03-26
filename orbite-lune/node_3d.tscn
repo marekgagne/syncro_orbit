@@ -45,12 +45,12 @@ shape = SubResource("SphereShape3D_noarx")
 [node name="Europe_r1" type="RigidBody3D" parent="." unique_id=1835999092 node_paths=PackedStringArray("centre_de_rotation", "autre_moitié")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8228974, 0, 0)
 script = ExtResource("1_a202f")
-masse_europe = 4.8e+22
+masse_europe = 2.4e+22
 r_p_reelle = 652377000.0
 v_p_reelle = 10644.75
 centre_de_rotation = NodePath("../Jupiter")
 "autre_moitié" = NodePath("../Europe_r2")
-etapes_calcul_par_ecran = 150
+etapes_calcul_par_ecran = 1
 periode_relative = 8.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Europe_r1" unique_id=908696574]
@@ -62,12 +62,12 @@ shape = SubResource("SphereShape3D_a202f")
 [node name="Europe_r2" type="RigidBody3D" parent="." unique_id=1978741697 node_paths=PackedStringArray("centre_de_rotation", "autre_moitié")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5870733, 0, 0)
 script = ExtResource("2_noarx")
-masse_europe = 4.8e+22
+masse_europe = 2.4e+22
 r_p_reelle = 677347000.0
 v_p_reelle = 17741.25
 centre_de_rotation = NodePath("../Jupiter")
 "autre_moitié" = NodePath("../Europe_r1")
-etapes_calcul_par_ecran = 150
+etapes_calcul_par_ecran = 1
 periode_relative = 8.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Europe_r2" unique_id=276974537]

@@ -28,8 +28,8 @@ var r_i : Vector3
 var v_i: Vector3
 "à changer"
 var r_a_reelle = ((-1* e *(r_p_reelle) - r_p_reelle)/(e - 1)) + (d/2)
-var r_p_simulee: float = log(r_p_reelle) / log(10)
-var r_a_simulee: float = log(r_a_reelle) / log(10)
+var r_p_simulee = 8.8145
+var r_a_simulee = "7.2657"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -56,12 +56,12 @@ func _process(delta: float) -> void:
 
 
 
-
+var r_diff_preced= Vector3(0,0,0)
 func calculer_acceleration(position_reelle: Vector3, temps_dernier_ecran: float) -> Vector3:
 	
 	"Calcule l'ensemble des forces appliquées sur les deux points d'Europe
 	et retourne l'accélération de ceux-ci (force / masse)"
-	var r_diff_preced= Vector3(0,0,0)
+	var force_frict = Vector3(0,0,0)
 	var pos_autre_moitié = autre_moitié.r_i
 	var r_diff= ( pos_autre_moitié- position_reelle)
 	print("pos_autre moitié: ", pos_autre_moitié)
@@ -69,15 +69,18 @@ func calculer_acceleration(position_reelle: Vector3, temps_dernier_ecran: float)
 	var r_diff_unit = r_diff.normalized()
 	print("r_d_u: ", r_diff_unit)
 	var r_diff_norme = r_diff.length()
+	print("r_d_n: ", r_diff_norme)
 	var facteur = -G * masse_europe * masse_jupiter / ((position_reelle.length())**3)
-	print("facteur: ", position_reelle * facteur)
 	var force_rappel = k * (r_diff_norme-d) * r_diff_unit
 	print("rappel: ", force_rappel.length() * r_diff_unit)
-	var force_frict = coef_dissip * (r_diff - r_diff_preced) / temps_dernier_ecran
+	if r_diff_preced > Vector3(0,0,0):
+		force_frict = ((r_diff - r_diff_preced) / temps_dernier_ecran) * coef_dissip
 	var fg = position_reelle * facteur
 	var force = fg + force_rappel + force_frict
-	r_diff_preced += r_diff
-	print("force = ", force.length())
+	r_diff_preced = r_diff
+	print("frict: ", force_frict)
+	print("fg: ", fg)
+	print("force = ", force)
 	return force / masse_europe
 
 func conv_position_reelle_a_simulee(position_reelle : Vector3) -> Vector3:
@@ -112,9 +115,9 @@ func appliquer_euler(temps_dernier_ecran : float) -> void:
 		#print("e = ", e)
 		#print("h = ", h)
 		
-		#print("r_p:", r_p_reelle)
+		print("r_p:", r_p_reelle)
 		#print("r_a:", r_a_reelle)
-		#print("r_p_s: ", r_p_simulee)
-		#print("r_a_s: ", r_a_simulee)
+		print("r_p_s: ", r_p_simulee)
+		print("r_a_s: ", r_a_simulee)
 		#print("e: ", excentricite)
 		
