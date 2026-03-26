@@ -27,7 +27,7 @@ var e: float = 0.0090519561382
 var r_i : Vector3
 var v_i: Vector3
 "à changer"
-var r_a_reelle = ((-1* e *(r_p_reelle) - r_p_reelle)/(e - 1))
+var r_a_reelle = ((-1* e *(r_p_reelle) - r_p_reelle)/(e - 1)) + (d/2)
 var r_p_simulee: float = log(r_p_reelle) / log(10)
 var r_a_simulee: float = log(r_a_reelle) / log(10)
 
@@ -56,22 +56,27 @@ func _process(delta: float) -> void:
 
 
 
-var dist_parcourue: float = 0
-func calculer_acceleration(position_reelle: Vector3, temps_dernier_ecran : float) -> Vector3:
+
+func calculer_acceleration(position_reelle: Vector3, v_i: Vector3) -> Vector3:
 	
 	"Calcule l'ensemble des forces appliquées sur les deux points d'Europe
 	et retourne l'accélération de ceux-ci (force / masse)"
 	
-	var pos_autre_moitié = Vector3(autre_moitié.r_i)
+	var pos_autre_moitié = autre_moitié.r_i
 	var r_diff= ( pos_autre_moitié- position_reelle)
+	print("pos_autre moitié: ", pos_autre_moitié)
+	print("pos_reelle: ", position_reelle)
 	var r_diff_unit = r_diff.normalized()
+	print("r_d_u: ", r_diff_unit)
 	var r_diff_norme = r_diff.length()
-	var facteur = -G * masse_europe * masse_jupiter / (position_reelle.length()**3)
+	var facteur = -G * masse_europe * masse_jupiter / ((position_reelle.length())**3)
+	print("facteur: ", position_reelle * facteur)
 	var force_rappel = k * (r_diff_norme-d) * r_diff_unit
-	var force_frict = coef_dissip * (dist_parcourue / temps_dernier_ecran)
-	"force_frict = -autre_moitié.force_frict"
-	var force = ((position_reelle - centre_de_rotation.position) * facteur) + (force_rappel*r_diff_unit) + (force_frict * r_diff_unit)
-	dist_parcourue = v_i.length() * temps_dernier_ecran
+	print("rappel: ", force_rappel.length() * r_diff_unit)
+	"var force_frict = coef_dissip * v_i"
+	
+	var force = ((position_reelle ) * facteur) + force_rappel
+	
 	print("force = ", force.length())
 	return force / masse_europe
 
@@ -95,21 +100,21 @@ func appliquer_euler(temps_dernier_ecran : float) -> void:
 	var nb_periode = temps_dernier_ecran  * periode / periode_relative
 	var h = nb_periode / etapes_calcul_par_ecran
 	for i in range(etapes_calcul_par_ecran):
-		var a_i = calculer_acceleration(r_i, temps_dernier_ecran)
+		var a_i = calculer_acceleration(r_i, v_i)
 		var r_i_plus_1 = r_i + h * v_i
 		var v_i_plus_1 = v_i + h * a_i
 		r_i = r_i_plus_1
 		v_i = v_i_plus_1
 		
-		print("r_i = ", r_i.length())
+		#print("r_i = ", r_i.length())
 		#print("v_i = ", v_i)
 		#print("a_i = ", a_i)
 		#print("e = ", e)
 		#print("h = ", h)
 		
-		print("r_p:", r_p_reelle)
-		print("r_a:", r_a_reelle)
-		print("r_p_s: ", r_p_simulee)
-		print("r_a_s: ", r_a_simulee)
-		print("e: ", excentricite)
+		#print("r_p:", r_p_reelle)
+		#print("r_a:", r_a_reelle)
+		#print("r_p_s: ", r_p_simulee)
+		#print("r_a_s: ", r_a_simulee)
+		#print("e: ", excentricite)
 		
