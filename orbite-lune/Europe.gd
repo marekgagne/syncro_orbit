@@ -22,12 +22,12 @@ var coef_dissip:float = 4e16
 
 "Création de vecteurs vides et préparation aux calculs"
 var G  = 6.673e-11
-var excentricite: float = (((v_p_reelle ** 2) * r_p_reelle)/(G * masse_jupiter))
-var e: float = 1.0090763073
+var excentricite: float = (((v_p_reelle ** 2) * r_p_reelle)/(G * (masse_jupiter+ 2* masse_europe)))-1
+var e: float = 0.0090519561382
 var r_i : Vector3
 var v_i: Vector3
 "à changer"
-var r_a_reelle: float = ((-1* e *(r_p_reelle) - r_p_reelle)/(e - 1))
+var r_a_reelle = ((-1* e *(r_p_reelle) - r_p_reelle)/(e - 1))
 var r_p_simulee: float = log(r_p_reelle) / log(10)
 var r_a_simulee: float = log(r_a_reelle) / log(10)
 
@@ -111,5 +111,5 @@ func appliquer_euler(temps_dernier_ecran : float) -> void:
 		print("r_a:", r_a_reelle)
 		print("r_p_s: ", r_p_simulee)
 		print("r_a_s: ", r_a_simulee)
-		
+		print("e: ", excentricite)
 		
