@@ -59,24 +59,25 @@ func _process(delta: float) -> void:
 
 func calculer_acceleration(position_reelle: Vector3, temps_dernier_ecran : float) -> Vector3:
 	
-	"Calcule l'ensemble des forces appliquées sur les deux points d'Europe
-	et retourne l'accélération de ceux-ci (force / masse)"
-	
-	var pos_autre_moitié = Vector3(autre_moitié.r_i)
+	"Calcule l'ensemble des forces appliquées sur le point d'Europe
+	et retourne l'accélération de celui-ci (force / masse)"
+	var r_diff_preced = Vector3(0,0,0)
+	var pos_autre_moitié = autre_moitié.r_i
 	var r_diff= ( pos_autre_moitié- position_reelle)
 	print("pos_autre moitié: ", pos_autre_moitié)
 	print("pos_reelle: ", position_reelle)
 	var r_diff_unit = r_diff.normalized()
 	print("r_d_u: ", r_diff_unit)
 	var r_diff_norme = r_diff.length()
-	var facteur = -G * masse_europe * masse_jupiter / ((position_reelle.length())**3)
+	var facteur = -G * masse_europe * masse_jupiter * ((position_reelle.length())**-3)
 	print("facteur: ", position_reelle * facteur)
 	var force_rappel = k * (r_diff_norme-d) * r_diff_unit
 	print("rappel: ", force_rappel.length() * r_diff_unit)
-	var force_frict = coef_dissip * v_i
+	var force_frict = coef_dissip * (r_diff - r_diff_preced)/temps_dernier_ecran
 	print("frict", force_frict.length() * r_diff_unit)
-	var force = ((position_reelle ) * facteur) + (force_rappel.length() * r_diff_unit) + (force_frict.length() * r_diff_unit)
-	
+	var fg = position_reelle * facteur
+	var force = fg + force_rappel + force_frict
+	r_diff_preced += r_diff
 	print("force = ", force.length())
 	return force / masse_europe
 

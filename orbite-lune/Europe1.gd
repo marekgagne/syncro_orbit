@@ -57,11 +57,11 @@ func _process(delta: float) -> void:
 
 
 
-func calculer_acceleration(position_reelle: Vector3, v_i: Vector3) -> Vector3:
+func calculer_acceleration(position_reelle: Vector3, temps_dernier_ecran: float) -> Vector3:
 	
 	"Calcule l'ensemble des forces appliquées sur les deux points d'Europe
 	et retourne l'accélération de ceux-ci (force / masse)"
-	
+	var r_diff_preced= Vector3(0,0,0)
 	var pos_autre_moitié = autre_moitié.r_i
 	var r_diff= ( pos_autre_moitié- position_reelle)
 	print("pos_autre moitié: ", pos_autre_moitié)
@@ -73,10 +73,10 @@ func calculer_acceleration(position_reelle: Vector3, v_i: Vector3) -> Vector3:
 	print("facteur: ", position_reelle * facteur)
 	var force_rappel = k * (r_diff_norme-d) * r_diff_unit
 	print("rappel: ", force_rappel.length() * r_diff_unit)
-	"var force_frict = coef_dissip * v_i"
-	
-	var force = ((position_reelle ) * facteur) + force_rappel
-	
+	var force_frict = coef_dissip * (r_diff - r_diff_preced) / temps_dernier_ecran
+	var fg = position_reelle * facteur
+	var force = fg + force_rappel + force_frict
+	r_diff_preced += r_diff
 	print("force = ", force.length())
 	return force / masse_europe
 
@@ -100,7 +100,7 @@ func appliquer_euler(temps_dernier_ecran : float) -> void:
 	var nb_periode = temps_dernier_ecran  * periode / periode_relative
 	var h = nb_periode / etapes_calcul_par_ecran
 	for i in range(etapes_calcul_par_ecran):
-		var a_i = calculer_acceleration(r_i, v_i)
+		var a_i = calculer_acceleration(r_i, temps_dernier_ecran)
 		var r_i_plus_1 = r_i + h * v_i
 		var v_i_plus_1 = v_i + h * a_i
 		r_i = r_i_plus_1
