@@ -1,5 +1,7 @@
 extends RigidBody3D
+class_name Europe
 
+var multiplicateur_temps : float = 1
 
 @export_group("Données d'orbite réelles")
 @export var masse_europe: float 
@@ -101,7 +103,7 @@ func appliquer_euler(temps_dernier_ecran : float) -> void:
 	
 	
 	var nb_periode = temps_dernier_ecran  * periode / periode_relative
-	var h = nb_periode / etapes_calcul_par_ecran
+	var h = (nb_periode * multiplicateur_temps) / etapes_calcul_par_ecran
 	for i in range(etapes_calcul_par_ecran):
 		var a_i = calculer_acceleration(r_i, temps_dernier_ecran)
 		var r_i_plus_1 = r_i + h * v_i

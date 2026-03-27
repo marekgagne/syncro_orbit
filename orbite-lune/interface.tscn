@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://ba4b8moto55vt"]
+
+[ext_resource type="Script" uid="uid://b77jlg2ivf6jg" path="res://interface.gd" id="1_kyn48"]
+[ext_resource type="Script" uid="uid://fe42qh1s8e3" path="res://glissière.gd" id="2_oi7g3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxhdb"]
+
+[node name="Interface" type="Control" unique_id=182255340 node_paths=PackedStringArray("Distance", "Pt")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kyn48")
+Distance = NodePath("Infos/MarginContainer/GridContainer/Distance")
+Pt = NodePath("Infos/MarginContainer/GridContainer/Pt")
+
+[node name="Controles" type="PanelContainer" parent="." unique_id=372298091]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 350.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yxhdb")
+
+[node name="MarginContainer" type="MarginContainer" parent="Controles" unique_id=926606205]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controles/MarginContainer" unique_id=36477668]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controles/MarginContainer/HBoxContainer" unique_id=1940727977]
+layout_mode = 2
+text = "Synchronisation orbitale"
+
+[node name="VSeparator" type="VSeparator" parent="Controles/MarginContainer/HBoxContainer" unique_id=1923293751]
+layout_mode = 2
+
+[node name="Glissiere" type="HSlider" parent="Controles/MarginContainer/HBoxContainer" unique_id=1322840062]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("2_oi7g3")
+
+[node name="multiplicateur" type="Label" parent="Controles/MarginContainer/HBoxContainer" unique_id=660149208]
+layout_mode = 2
+
+[node name="Infos" type="PanelContainer" parent="." unique_id=1749417179]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 80.0
+offset_right = 50.0
+offset_bottom = 184.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Infos" unique_id=1397481004]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="Infos/MarginContainer" unique_id=516943383]
+layout_mode = 2
+columns = 2
+
+[node name="Titre1(Distance)" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=21915069]
+layout_mode = 2
+text = "Distance 2 pts Europe"
+horizontal_alignment = 1
+
+[node name="Titre2(Pt + proche)" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=780180047]
+layout_mode = 2
+text = "Pt le plus rapproché"
+horizontal_alignment = 1
+
+[node name="Distance" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=2023062428]
+layout_mode = 2
+text = "Distance"
+horizontal_alignment = 1
+
+[node name="Pt" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=1519077365]
+layout_mode = 2
+text = "Pt"
+horizontal_alignment = 1
+
+[connection signal="value_changed" from="Controles/MarginContainer/HBoxContainer/Glissiere" to="." method="_on_glissiere_value_changed"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbf8m6swsngsk" path="res://Europe1.gd" id="1_a202f"]
 [ext_resource type="Script" uid="uid://butaxuo06yxpo" path="res://Europe2.gd" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://ba4b8moto55vt" path="res://interface.tscn" id="3_a0tk4"]
 
 [sub_resource type="Environment" id="Environment_4xowi"]
 background_mode = 1
@@ -75,3 +76,7 @@ mesh = SubResource("SphereMesh_noarx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Europe_r2" unique_id=582717262]
 shape = SubResource("SphereShape3D_a0tk4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1813995890]
+
+[node name="Interface" parent="CanvasLayer" unique_id=182255340 instance=ExtResource("3_a0tk4")]
