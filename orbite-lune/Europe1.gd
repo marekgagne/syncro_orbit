@@ -31,7 +31,7 @@ var v_i: Vector3
 "à changer"
 var r_a_reelle = ((-1* e *(r_p_reelle) - r_p_reelle)/(e - 1)) + (d/2)
 var r_p_simulee = 8.8145
-var r_a_simulee = "7.2657"
+var r_a_simulee = 7.2657
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
