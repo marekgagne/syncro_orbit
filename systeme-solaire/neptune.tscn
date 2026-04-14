@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dmtmorbc56o13"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_58u7j"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_xn7oe"]
+
+[node name="Neptune" type="RigidBody3D" unique_id=433825845]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=848074948]
+shape = SubResource("SphereShape3D_58u7j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=749731680]
+mesh = SubResource("SphereMesh_xn7oe")

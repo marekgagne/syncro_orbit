@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://chylsyp4tbm5r"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e4owc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4owc"]
+albedo_color = Color(1, 1, 0.32941177, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_r1vuo"]
+material = SubResource("StandardMaterial3D_e4owc")
+
+[node name="Soleil" type="RigidBody3D" unique_id=264040519]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1034352360]
+shape = SubResource("SphereShape3D_e4owc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=293503588]
+mesh = SubResource("SphereMesh_r1vuo")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1733865290]
+light_energy = 16.0
+omni_range = 10.0
