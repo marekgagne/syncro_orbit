@@ -1,9 +1,7 @@
 extends RigidBody3D
-var masse: float = 3.3011e23
-var p_x = Vector3(1,0,0)
-var r_p : float = 46001200000
-var r_a : float = 69816900000
-var r_i = r_p * p_x
+
+@export var vitesse_de_rotation: float
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,4 +9,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	rotation.y += deg_to_rad(delta * vitesse_de_rotation)
+	if rotation.y >= deg_to_rad(180):
+		print(rotation.y)

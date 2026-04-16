@@ -1,21 +1,30 @@
 [gd_scene format=3 uid="uid://chylsyp4tbm5r"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_e4owc"]
+[ext_resource type="PackedScene" uid="uid://ci2heqgros7kf" path="res://planet_base.tscn" id="1_r1vuo"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4owc"]
-albedo_color = Color(1, 1, 0.32941177, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1vuo"]
+albedo_color = Color(1, 0.9137255, 0.18039216, 1)
+emission_enabled = true
+emission = Color(1, 0.9137255, 0.18039216, 1)
+emission_energy_multiplier = 1.07
 
-[sub_resource type="SphereMesh" id="SphereMesh_r1vuo"]
-material = SubResource("StandardMaterial3D_e4owc")
+[sub_resource type="SphereMesh" id="SphereMesh_t2jn2"]
+material = SubResource("StandardMaterial3D_r1vuo")
+radius = 1.0
+height = 2.0
 
-[node name="Soleil" type="RigidBody3D" unique_id=264040519]
+[sub_resource type="SphereShape3D" id="SphereShape3D_r1vuo"]
+radius = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1034352360]
-shape = SubResource("SphereShape3D_e4owc")
+[node name="soleil" unique_id=643819563 instance=ExtResource("1_r1vuo")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=293503588]
-mesh = SubResource("SphereMesh_r1vuo")
+[node name="MeshInstance3D" parent="Planet" parent_id_path=PackedInt32Array(1420857609) index="0" unique_id=315371791]
+mesh = SubResource("SphereMesh_t2jn2")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1733865290]
+[node name="CollisionShape3D" parent="Planet" parent_id_path=PackedInt32Array(1420857609) index="1" unique_id=1862861849]
+shape = SubResource("SphereShape3D_r1vuo")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Planet" parent_id_path=PackedInt32Array(1420857609) index="2" unique_id=1917647272]
 light_energy = 16.0
-omni_range = 10.0
+light_size = 1.0
+omni_range = 50.797

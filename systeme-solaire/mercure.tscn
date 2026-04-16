@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://bp7f25wglvdul"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_58u7j"]
+[ext_resource type="PackedScene" uid="uid://ci2heqgros7kf" path="res://planet_base.tscn" id="1_4gtc2"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_xn7oe"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g30sm"]
+albedo_color = Color(0.9764706, 0.56078434, 0.26666668, 1)
 
-[node name="Mercure" type="RigidBody3D" unique_id=1073239959]
+[sub_resource type="SphereMesh" id="SphereMesh_1buev"]
+material = SubResource("StandardMaterial3D_g30sm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1696960889]
-shape = SubResource("SphereShape3D_58u7j")
+[node name="Mercure" unique_id=643819563 instance=ExtResource("1_4gtc2")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1890895945]
-mesh = SubResource("SphereMesh_xn7oe")
+[node name="Planet" parent="." index="0" unique_id=1420857609]
+vitesse_de_rotation = 120.0
+
+[node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
+mesh = SubResource("SphereMesh_1buev")

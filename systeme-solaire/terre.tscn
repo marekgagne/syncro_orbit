@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://i1ivbcwlvru2"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_lbp5u"]
+[ext_resource type="PackedScene" uid="uid://ci2heqgros7kf" path="res://planet_base.tscn" id="1_gxbkn"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_gxbkn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wbop"]
+albedo_color = Color(0.19215687, 0.24705882, 0.78431374, 1)
 
-[node name="Terre" type="RigidBody3D" unique_id=1229568035]
+[sub_resource type="SphereMesh" id="SphereMesh_7cqta"]
+material = SubResource("StandardMaterial3D_4wbop")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=378090703]
-mesh = SubResource("SphereMesh_lbp5u")
+[node name="Terre" unique_id=643819563 instance=ExtResource("1_gxbkn")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1040788840]
-shape = SubResource("SphereShape3D_gxbkn")
+[node name="Planet" parent="." index="0" unique_id=1420857609]
+vitesse_de_rotation = 100.0
+
+[node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
+mesh = SubResource("SphereMesh_7cqta")

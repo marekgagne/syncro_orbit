@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://dgtktjlb4mib6"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_58u7j"]
+[ext_resource type="PackedScene" uid="uid://ci2heqgros7kf" path="res://planet_base.tscn" id="1_8q3j1"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_xn7oe"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8pt5"]
+albedo_color = Color(0.047058824, 0.5372549, 1, 1)
 
-[node name="Uranus" type="RigidBody3D" unique_id=364562528]
+[sub_resource type="SphereMesh" id="SphereMesh_1dyna"]
+material = SubResource("StandardMaterial3D_e8pt5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1565447158]
-shape = SubResource("SphereShape3D_58u7j")
+[node name="Uranus" unique_id=643819563 instance=ExtResource("1_8q3j1")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=836166792]
-mesh = SubResource("SphereMesh_xn7oe")
+[node name="Planet" parent="." index="0" unique_id=1420857609]
+vitesse_de_rotation = 60.0
+
+[node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
+mesh = SubResource("SphereMesh_1dyna")

@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://cpx60o20it7f5"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_58u7j"]
+[ext_resource type="PackedScene" uid="uid://ci2heqgros7kf" path="res://planet_base.tscn" id="1_e0wss"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_xn7oe"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wh08y"]
+albedo_color = Color(0.8392157, 0.5764706, 0.26666668, 1)
 
-[node name="Saturne" type="RigidBody3D" unique_id=1590383665]
+[sub_resource type="SphereMesh" id="SphereMesh_alclt"]
+material = SubResource("StandardMaterial3D_wh08y")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=27136345]
-shape = SubResource("SphereShape3D_58u7j")
+[node name="Saturne" unique_id=643819563 instance=ExtResource("1_e0wss")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=188836647]
-mesh = SubResource("SphereMesh_xn7oe")
+[node name="Planet" parent="." index="0" unique_id=1420857609]
+vitesse_de_rotation = 80.0
+
+[node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
+mesh = SubResource("SphereMesh_alclt")
