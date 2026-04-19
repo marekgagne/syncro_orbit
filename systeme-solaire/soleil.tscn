@@ -17,14 +17,20 @@ height = 2.0
 radius = 1.0
 
 [node name="soleil" unique_id=643819563 instance=ExtResource("1_r1vuo")]
+masse_kg = 1.988475e+30
 
-[node name="MeshInstance3D" parent="Planet" parent_id_path=PackedInt32Array(1420857609) index="0" unique_id=315371791]
+[node name="Planet" parent="." index="0" unique_id=1420857609]
+rayon_m = 695700000.0
+periode_rot_s = 2419200.0
+
+[node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
 mesh = SubResource("SphereMesh_t2jn2")
 
-[node name="CollisionShape3D" parent="Planet" parent_id_path=PackedInt32Array(1420857609) index="1" unique_id=1862861849]
+[node name="CollisionShape3D" parent="Planet" index="1" unique_id=1862861849]
 shape = SubResource("SphereShape3D_r1vuo")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Planet" parent_id_path=PackedInt32Array(1420857609) index="2" unique_id=1917647272]
+[node name="OmniLight3D" type="OmniLight3D" parent="Planet" index="2" unique_id=1917647272]
 light_energy = 16.0
 light_size = 1.0
+shadow_enabled = true
 omni_range = 50.797

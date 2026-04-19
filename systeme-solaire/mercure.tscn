@@ -9,9 +9,15 @@ albedo_color = Color(0.9764706, 0.56078434, 0.26666668, 1)
 material = SubResource("StandardMaterial3D_g30sm")
 
 [node name="Mercure" unique_id=643819563 instance=ExtResource("1_4gtc2")]
+masse_kg = 3.3011e+23
+v_p_ms = 58980.0
+r_p_m = 46001200000.0
+v_a_ms = 38860000000.0
+r_a_m = 69816900000.0
 
 [node name="Planet" parent="." index="0" unique_id=1420857609]
-vitesse_de_rotation = 120.0
+rayon_m = 2439700.0
+periode_rot_s = 5066997.12
 
 [node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
 mesh = SubResource("SphereMesh_1buev")

@@ -16,33 +16,42 @@ background_mode = 1
 [node name="Node3D" type="Node3D" unique_id=1291283643]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1901619625]
-transform = Transform3D(-0.5295674603382653, 0.009208116044365541, -0.8482178467527038, -0.2228927486375254, 0.9632932626454518, 0.14961588400530781, 0.8184602174545128, 0.26829331102506876, -0.5080763443652114, -3.4122695539902503, 1.3466604906767188, -0.2645072906497319)
+transform = Transform3D(-0.5295674603382654, 0.009208116044365496, -0.8482178467527037, -0.22289274863752545, 0.9632932626454518, 0.14961588400530776, 0.818460217454513, 0.2682933110250688, -0.5080763443652115, -5.590833428019801, 1.3466604906767188, -0.2645072906497319)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1058283564]
 environment = SubResource("Environment_873ud")
 
 [node name="soleil" parent="." unique_id=643819563 instance=ExtResource("1_y105a")]
+script = null
 
-[node name="Mercure" parent="." unique_id=1223978207 instance=ExtResource("4_xflmw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+[node name="Mercure" parent="." unique_id=249378016 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("4_xflmw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9039290542151974)
+centre_rotation = NodePath("../soleil")
 
-[node name="Vénus" parent="." unique_id=1181187399 instance=ExtResource("3_72vm6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07469264757635807, 0, 3)
+[node name="Vénus" parent="." unique_id=546489266 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("3_72vm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.119325316520447)
+centre_rotation = NodePath("../soleil")
 
-[node name="Terre" parent="." unique_id=397259956 instance=ExtResource("2_yhig7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07469264757635807, 0, 4)
+[node name="Terre" parent="." unique_id=1763086966 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("2_yhig7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.309101871782207)
+centre_rotation = NodePath("../soleil")
 
-[node name="Mars" parent="." unique_id=1045772234 instance=ExtResource("3_s6iug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+[node name="Mars" parent="." unique_id=336504403 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("3_s6iug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.505118650891797)
+centre_rotation = NodePath("../soleil")
 
-[node name="Jupiter" parent="." unique_id=835322144 instance=ExtResource("8_ifugv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+[node name="Jupiter" parent="." unique_id=1166489309 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("8_ifugv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.702750464542442)
+centre_rotation = NodePath("../soleil")
 
-[node name="Saturne" parent="." unique_id=2059927909 instance=ExtResource("7_6xcrf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+[node name="Saturne" parent="." unique_id=1235135298 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("7_6xcrf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.818081718222032)
+centre_rotation = NodePath("../soleil")
 
-[node name="Uranus" parent="." unique_id=1919926299 instance=ExtResource("9_xk7o8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+[node name="Uranus" parent="." unique_id=1029649281 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("9_xk7o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.91244803531974)
+centre_rotation = NodePath("../soleil")
 
-[node name="Neptune" parent="." unique_id=676227996 instance=ExtResource("6_3s88q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+[node name="Neptune" parent="." unique_id=461063366 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("6_3s88q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.103028219821983)
+centre_rotation = NodePath("../soleil")

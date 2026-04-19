@@ -1,9 +1,11 @@
-extends RigidBody3D
+extends Node3D
 
-@export var rayon_m: float
-@export var periode_rot_s: float
-var circ = 2 * PI * rayon_m
-var vitesse_de_rotation = 360 * (circ / periode_rot_s) / circ
+@export var masse_kg: float
+@export var v_p_ms: float
+@export var r_p_m: float
+@export var v_a_ms: float
+@export var r_a_m: float
+@export var centre_rotation: Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,4 +14,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotation.y += deg_to_rad(delta * vitesse_de_rotation)
+	pass

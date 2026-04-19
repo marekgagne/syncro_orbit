@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ci2heqgros7kf"]
 
+[ext_resource type="Script" uid="uid://dl7froc40lnog" path="res://revolution.gd" id="1_eog3t"]
 [ext_resource type="Script" uid="uid://bgv84eqf86jcp" path="res://rotation.gd" id="1_rjrc8"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_rjrc8"]
@@ -7,6 +8,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_0qm5f"]
 
 [node name="Planet_base" type="Node3D" unique_id=643819563]
+script = ExtResource("1_eog3t")
 
 [node name="Planet" type="RigidBody3D" parent="." unique_id=1420857609]
 script = ExtResource("1_rjrc8")
