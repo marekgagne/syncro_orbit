@@ -9,9 +9,15 @@ albedo_color = Color(0, 0.003921569, 0.5529412, 1)
 material = SubResource("StandardMaterial3D_qgwa2")
 
 [node name="Neptune" unique_id=643819563 instance=ExtResource("1_ktkx8")]
+masse_kg = 1.0243e+26
+v_p_ms = 5479.5
+r_p_m = 4469800000000.0
+v_a_ms = 5386.1
+r_a_m = 4537000000000.0
 
 [node name="Planet" parent="." index="0" unique_id=1420857609]
-vitesse_de_rotation = 60.0
+rayon_m = 24764000.0
+periode_rot_s = 57996.0
 
 [node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
 mesh = SubResource("SphereMesh_ms8sn")

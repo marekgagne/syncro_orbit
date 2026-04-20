@@ -9,9 +9,15 @@ albedo_color = Color(1, 0.78431374, 0.38039216, 1)
 material = SubResource("StandardMaterial3D_si51w")
 
 [node name="Jupiter" unique_id=643819563 instance=ExtResource("1_mvbpq")]
+masse_kg = 1.8986e+27
+v_p_ms = 13714.0
+r_p_m = 740680000000.0
+v_a_ms = 12448.0
+r_a_m = 816000000000.0
 
 [node name="Planet" parent="." index="0" unique_id=1420857609]
-vitesse_de_rotation = 80.0
+rayon_m = 71488000.0
+periode_rot_s = 35729.683
 
 [node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
 mesh = SubResource("SphereMesh_i0uay")

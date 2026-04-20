@@ -9,9 +9,15 @@ albedo_color = Color(0.19215687, 0.24705882, 0.78431374, 1)
 material = SubResource("StandardMaterial3D_4wbop")
 
 [node name="Terre" unique_id=643819563 instance=ExtResource("1_gxbkn")]
+masse_kg = 5.9736e+24
+v_p_ms = 30287.0
+r_p_m = 147098074000.0
+v_a_ms = 29291.0
+r_a_m = 152097701000.0
 
 [node name="Planet" parent="." index="0" unique_id=1420857609]
-vitesse_de_rotation = 100.0
+rayon_m = 6378137.0
+periode_rot_s = 86164.084
 
 [node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
 mesh = SubResource("SphereMesh_7cqta")

@@ -9,9 +9,15 @@ albedo_color = Color(1, 0.3372549, 0.039215688, 1)
 material = SubResource("StandardMaterial3D_ksmih")
 
 [node name="Mars" unique_id=643819563 instance=ExtResource("1_xn7oe")]
+masse_kg = 6.4185e+23
+v_p_ms = 26503.0
+r_p_m = 206655000000.0
+v_a_ms = 21975.0
+r_a_m = 249230000000.0
 
 [node name="Planet" parent="." index="0" unique_id=1420857609]
-vitesse_de_rotation = 100.0
+rayon_m = 3396200.0
+periode_rot_s = 88642.8
 
 [node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
 mesh = SubResource("SphereMesh_jwv7x")

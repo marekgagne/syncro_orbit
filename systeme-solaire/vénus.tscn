@@ -9,9 +9,15 @@ albedo_color = Color(0.9529412, 0.8, 0.2, 1)
 material = SubResource("StandardMaterial3D_bf3b6")
 
 [node name="Vénus" unique_id=643819563 instance=ExtResource("1_bf3b6")]
+masse_kg = 4.8675e+24
+v_p_ms = 35025.71
+r_p_m = 107480000000.0
+v_a_ms = 34789.5
+r_a_m = 108940000000.0
 
 [node name="Planet" parent="." index="0" unique_id=1420857609]
-vitesse_de_rotation = 120.0
+rayon_m = 6051800.0
+periode_rot_s = 20997187.2
 
 [node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
 mesh = SubResource("SphereMesh_8k6x7")

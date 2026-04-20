@@ -9,9 +9,15 @@ albedo_color = Color(0.047058824, 0.5372549, 1, 1)
 material = SubResource("StandardMaterial3D_e8pt5")
 
 [node name="Uranus" unique_id=643819563 instance=ExtResource("1_8q3j1")]
+masse_kg = 8.681e+25
+v_p_ms = 7129.872
+r_p_m = 2735000000000.0
+v_a_ms = 6486.432
+r_a_m = 3006300000000.0
 
 [node name="Planet" parent="." index="0" unique_id=1420857609]
-vitesse_de_rotation = 60.0
+rayon_m = 25559000.0
+periode_rot_s = 62035.2
 
 [node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
 mesh = SubResource("SphereMesh_1dyna")
