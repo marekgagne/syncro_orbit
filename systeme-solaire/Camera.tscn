@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://4lcmv85aeary"]
+
+[ext_resource type="Script" uid="uid://bls6wcxmiltt0" path="res://déplacement.gd" id="1_e6e23"]
+
+[node name="Camera3D" type="Camera3D" unique_id=1419789890]
+transform = Transform3D(-0.5295674603382654, 0.00920811604436549, -0.8482178467527037, -0.22289274863752545, 0.9632932626454518, 0.14961588400530776, 0.818460217454513, 0.2682933110250688, -0.5080763443652115, 0, 0, 0)
+script = ExtResource("1_e6e23")
