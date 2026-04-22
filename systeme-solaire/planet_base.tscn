@@ -12,6 +12,7 @@ script = ExtResource("1_eog3t")
 
 [node name="Planet" type="RigidBody3D" parent="." unique_id=1420857609]
 script = ExtResource("1_rjrc8")
+periode_rot_s = 1.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Planet" unique_id=315371791]
 mesh = SubResource("SphereMesh_rjrc8")
