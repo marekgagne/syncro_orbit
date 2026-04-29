@@ -25,6 +25,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	appliquer_rk(delta)
+	position = conv_position(r_i)
 
 func calculer_acceleration_gravitationnelle(position_rellee: Vector3) -> Vector3:
 	var facteur = -G * masse_kg * centre_rotation.masse_kg / (position_rellee.length()**3)
