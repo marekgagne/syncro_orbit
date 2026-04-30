@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://chylsyp4tbm5r"]
 
 [ext_resource type="PackedScene" uid="uid://ci2heqgros7kf" path="res://planet_base.tscn" id="1_r1vuo"]
+[ext_resource type="Script" uid="uid://cd814uijfpn8q" path="res://soleil.gd" id="2_usdec"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1vuo"]
 albedo_color = Color(1, 0.9137255, 0.18039216, 1)
@@ -17,7 +18,7 @@ height = 2.0
 radius = 1.0
 
 [node name="soleil" unique_id=643819563 instance=ExtResource("1_r1vuo")]
-masse_kg = 1.988475e+30
+script = ExtResource("2_usdec")
 
 [node name="Planet" parent="." index="0" unique_id=1420857609]
 rayon_m = 695700000.0
