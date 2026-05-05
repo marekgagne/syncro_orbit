@@ -1,5 +1,6 @@
 extends Camera3D
 var pos_initiale = Vector3(3,3,3)
+var rot_initiale = Vector3.ZERO
 var vitesse = 10
 var vitesse_rotation = 1
 
@@ -9,6 +10,7 @@ func _ready() -> void:
 		printerr("Invalid transform on: ", name)
 		transform = Transform3D.IDENTITY
 	position = pos_initiale 
+	rotation = rot_initiale
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,14 +30,20 @@ func _process(delta: float) -> void:
 		rotation_gauche(delta)
 	if Input.is_action_pressed("rotation droite"):
 		rotation_droite(delta)
-		
+	
+	
 	#Inclinaison
 	if Input.is_action_pressed("Inclinaison bas"):
 		inclinaison_bas(delta)
 	if Input.is_action_pressed("inclinaison haut"):
 		inclinaison_haut(delta)
 		
+	#Reset
+	if Input.is_action_just_pressed("Reset"):
+		reset_cam()
+		
 func avancer(delta):
+	""" Lorsque cette fonction est appelé, l'objet interpellé avance"""
 	position -= global_transform.basis.z * vitesse * delta
 
 func reculer(delta):
@@ -58,3 +66,7 @@ func inclinaison_bas(delta):
 	
 func inclinaison_haut(delta):
 	rotate_x(vitesse_rotation * delta)
+	
+func reset_cam():
+	position = pos_initiale 
+	rotation = rot_initiale

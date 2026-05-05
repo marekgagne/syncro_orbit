@@ -72,3 +72,17 @@ func appliquer_rk(temps_dernier_ecran: float) -> void:
 	
 	r_i = r_plus_un
 	v_i = v_plus_un
+	
+	
+func infos_planetes():
+	return{
+		"masse" : masse_kg,
+		"vitesse_perihelie" : v_p_ms,
+		"exentricite" : calculer_exentricite(),
+		"periode_revolution" : periode_revolution_s,
+		"periode_rotation" : null
+		}
+	
+
+func calculer_exentricite():
+	return ((r_a_m - r_p_m)/(r_a_m + r_p_m))
