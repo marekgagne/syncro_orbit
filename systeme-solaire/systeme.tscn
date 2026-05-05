@@ -27,63 +27,77 @@ environment = SubResource("Environment_873ud")
 [node name="soleil" parent="." unique_id=643819563 instance=ExtResource("1_y105a")]
 script = ExtResource("3_xflmw")
 masse_kg = 1.9885e+30
+v_p_ms = 18.64
+r_p_m = 473288117.25
+v_a_ms = 6.21
+r_a_m = 1419864351.7
+periode_revolution_s = 374000000.0
 etapes_calcul_par_ecran = 150
-v_ms = Vector3(12.422, 0.376, -0.093)
-r_m = Vector3(-458764856, -767268500, -311191940)
+v_i = Vector3(12.43, 0.38, -0.093)
+r_i = Vector3(-459000000, -767000000, -311000000)
+mult = 100
 
 [node name="Mercure" parent="." unique_id=249378016 instance=ExtResource("4_xflmw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.180358323089747)
 v_a_ms = 38860.0
-periode_revolution_s = 3.0
+periode_revolution_s = 7600000.0
 etapes_calcul_par_ecran = 150
-v_ms = Vector3(33312.433, -16768.727, -12409.42)
-r_m = Vector3(-32650575496, -5611890196, -2654380476)
+v_i = Vector3(33310, -16770, -12410)
+r_i = Vector3(-32600000000, -56100000000, -26500000000)
+mult = 100
 
 [node name="Vénus" parent="." unique_id=546489266 instance=ExtResource("3_72vm6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.3442007264866955)
-periode_revolution_s = 4.0
+periode_revolution_s = 19400000.0
 etapes_calcul_par_ecran = 150
-v_ms = Vector3(34535.087, 4583.891, -121.753)
-r_m = Vector3(1283966085.6, -9893744238.4, -45326324120)
+v_i = Vector3(34530, 4585, -122)
+r_i = Vector3(12800000000, -98900000000, -45300000000)
+mult = 100
 
 [node name="Terre" parent="." unique_id=1763086966 instance=ExtResource("2_yhig7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.309101871782207)
-periode_revolution_s = 5.0
+periode_revolution_s = 31600000.0
 etapes_calcul_par_ecran = 150
-v_ms = Vector3(-29434.766, -5194.371, -1731.457)
-r_m = Vector3(-26479200000, 132096800000, 57296800000)
+v_i = Vector3(-29770, -4950, -2145)
+r_i = Vector3(-26500000000, 132000000000, 57300000000)
+mult = 100
 
 [node name="Mars" parent="." unique_id=336504403 instance=ExtResource("3_s6iug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.505118650891797)
-periode_revolution_s = 6.0
+periode_revolution_s = 59300000.0
 etapes_calcul_par_ecran = 150
-v_ms = Vector3(24240.396, 6925.827, 3462.914)
-r_m = Vector3(50564800000, -188944800000, -87964800000)
+v_i = Vector3(24460, 7380, 2725)
+r_i = Vector3(50500000000, -189000000000, -88000000000)
+mult = 100
 
 [node name="Jupiter" parent="." unique_id=1166489309 instance=ExtResource("8_ifugv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.702750464542442)
-periode_revolution_s = 7.0
+periode_revolution_s = 374000000.0
 etapes_calcul_par_ecran = 150
-v_ms = Vector3(-2938282.257, 7808870.348, 3419627.259)
-r_m = Vector3(-1047200000, -299200000, -149600000)
+v_i = Vector3(-12510, -3455, -1177)
+r_i = Vector3(-254000000000, 675000000000, 295000000000)
+mult = 100
 
 [node name="Saturne" parent="." unique_id=1235135298 instance=ExtResource("7_6xcrf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.818081718222032)
-periode_revolution_s = 8.0
+periode_revolution_s = 929000000.0
 etapes_calcul_par_ecran = 150
-v_ms = Vector3(16455765.807, 664879.427, -434595.667)
-r_m = Vector3(-6820413.6, 748000000, 299200000)
+v_i = Vector3(-790, 8890, 3710)
+r_i = Vector3(1420000000000, 57400000000, -37500000000)
+mult = 100
 
 [node name="Uranus" parent="." unique_id=1029649281 instance=ExtResource("9_xk7o8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.91244803531974)
-periode_revolution_s = 9.0
+periode_revolution_s = 2650000000.0
 etapes_calcul_par_ecran = 150
-v_ms = Vector3(17101599.209, 26725036.325, 11462244.281)
-r_m = Vector3(-448800000, 299200000, 149600000)
+v_i = Vector3(-5920, 2840, 1330)
+r_i = Vector3(1480000000000, 2310000000000, 990000000000)
+mult = 100
 
 [node name="Neptune" parent="." unique_id=461063366 instance=ExtResource("6_3s88q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.103028219821985)
-periode_revolution_s = 10.0
+periode_revolution_s = 5200000000.0
 etapes_calcul_par_ecran = 150
-v_ms = Vector3(51716884.354, 1296861.173, -756646.639)
-r_m = Vector3(-11162459.008, 437120599.344, 179193683.504)
+v_i = Vector3(-129, 5060, 2075)
+r_i = Vector3(4470000000000, 112000000000, -65400000000)
+mult = 100

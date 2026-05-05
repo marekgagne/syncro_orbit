@@ -7,15 +7,17 @@ extends Node3D
 @export var r_a_m: float
 @export var periode_revolution_s: float
 @export var etapes_calcul_par_ecran: int
-@export var v_ms: Vector3
-@export var r_m: Vector3
+@export var v_i: Vector3
+@export var r_i: Vector3
+@export var mult: int
+var fast_forward = mult * 24 * 60 * 60
+var periode_relative = periode_revolution_s / fast_forward
 
 var position_réelle = r_p_m
 var G = 6.67e-11
-var r_a_sim = 2
-var r_p_sim = 20
-var r_i: Vector3
-var v_i: Vector3
+var r_a_sim = 4
+var r_p_sim = 10
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,9 +27,9 @@ func _ready() -> void:
 		printerr("Invalid transform on: ", name)
 		transform = Transform3D.IDENTITY
 
-	r_i = r_m
+	
 	position = conv_position(r_i)
-	v_i = v_ms
+
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,7 +58,8 @@ func conv_position(position_reelle : Vector3) -> Vector3:
 	return position_reelle.normalized() * facteur_distance_simulee
 	
 func appliquer_rk(temps_dernier_ecran: float) -> void:
-	var h = temps_dernier_ecran 
+	var nb_periode = temps_dernier_ecran  * periode_revolution_s / periode_relative
+	var h = nb_periode / etapes_calcul_par_ecran
 	var a_i = calculer_acceleration_gravitationnelle(r_i)
 	var vk1 =  a_i
 	var vk2 = a_i + vk1 * (h/2)
