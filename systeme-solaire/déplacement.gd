@@ -5,6 +5,9 @@ var vitesse_rotation = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if not transform.is_finite():
+		printerr("Invalid transform on: ", name)
+		transform = Transform3D.IDENTITY
 	position = pos_initiale 
 
 

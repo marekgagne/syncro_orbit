@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://i1ivbcwlvru2" path="res://terre.tscn" id="2_yhig7"]
 [ext_resource type="PackedScene" uid="uid://0kalcn0vxngj" path="res://vénus.tscn" id="3_72vm6"]
 [ext_resource type="PackedScene" uid="uid://mmemy5q5g0h4" path="res://mars.tscn" id="3_s6iug"]
+[ext_resource type="Script" uid="uid://dl7froc40lnog" path="res://revolution.gd" id="3_xflmw"]
 [ext_resource type="PackedScene" uid="uid://bp7f25wglvdul" path="res://mercure.tscn" id="4_xflmw"]
 [ext_resource type="PackedScene" uid="uid://dmtmorbc56o13" path="res://neptune.tscn" id="6_3s88q"]
 [ext_resource type="PackedScene" uid="uid://cpx60o20it7f5" path="res://saturne.tscn" id="7_6xcrf"]
@@ -17,75 +18,71 @@ background_mode = 1
 [node name="Node3D" type="Node3D" unique_id=1291283643]
 
 [node name="Camera3D" parent="." unique_id=1419789890 instance=ExtResource("1_yhig7")]
-transform = Transform3D(-0.5132828428818146, 0.09688358410563463, -0.8527334251300399, -0.01628928385889243, 0.9923288127973274, 0.12254871081986653, 0.8580649057236445, 0.0767925674990313, -0.5077671899033847, -3.8105694183804215, 1.3466604906767188, -0.26729704785630615)
+transform = Transform3D(-0.5132828428818146, 0.09688358410563463, -0.8527334251300399, -0.01628928385889243, 0.9923288127973274, 0.12254871081986651, 0.8580649057236445, 0.0767925674990313, -0.5077671899033847, -3.8105694183804215, 1.3466604906767188, -0.26729704785630615)
 fov = 82.962845
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1058283564]
 environment = SubResource("Environment_873ud")
 
 [node name="soleil" parent="." unique_id=643819563 instance=ExtResource("1_y105a")]
-v_ms = Vector3(12.425, 0.376, -0.093)
-r_m = Vector3(-45876485.6, -767268500, -311191940)
+script = ExtResource("3_xflmw")
+masse_kg = 1.9885e+30
+etapes_calcul_par_ecran = 150
+v_ms = Vector3(12.422, 0.376, -0.093)
+r_m = Vector3(-458764856, -767268500, -311191940)
 
-[node name="Mercure" parent="." unique_id=249378016 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("4_xflmw")]
+[node name="Mercure" parent="." unique_id=249378016 instance=ExtResource("4_xflmw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.180358323089747)
-centre_rotation = NodePath("../soleil")
+v_a_ms = 38860.0
 periode_revolution_s = 3.0
 etapes_calcul_par_ecran = 150
 v_ms = Vector3(33312.433, -16768.727, -12409.42)
 r_m = Vector3(-32650575496, -5611890196, -2654380476)
 
-[node name="Vénus" parent="." unique_id=546489266 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("3_72vm6")]
+[node name="Vénus" parent="." unique_id=546489266 instance=ExtResource("3_72vm6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.3442007264866955)
-centre_rotation = NodePath("../soleil")
 periode_revolution_s = 4.0
 etapes_calcul_par_ecran = 150
 v_ms = Vector3(34535.087, 4583.891, -121.753)
 r_m = Vector3(1283966085.6, -9893744238.4, -45326324120)
 
-[node name="Terre" parent="." unique_id=1763086966 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("2_yhig7")]
+[node name="Terre" parent="." unique_id=1763086966 instance=ExtResource("2_yhig7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.309101871782207)
-centre_rotation = NodePath("../soleil")
 periode_revolution_s = 5.0
 etapes_calcul_par_ecran = 150
 v_ms = Vector3(-29434.766, -5194.371, -1731.457)
 r_m = Vector3(-26479200000, 132096800000, 57296800000)
 
-[node name="Mars" parent="." unique_id=336504403 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("3_s6iug")]
+[node name="Mars" parent="." unique_id=336504403 instance=ExtResource("3_s6iug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.505118650891797)
-centre_rotation = NodePath("../soleil")
 periode_revolution_s = 6.0
 etapes_calcul_par_ecran = 150
 v_ms = Vector3(24240.396, 6925.827, 3462.914)
 r_m = Vector3(50564800000, -188944800000, -87964800000)
 
-[node name="Jupiter" parent="." unique_id=1166489309 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("8_ifugv")]
+[node name="Jupiter" parent="." unique_id=1166489309 instance=ExtResource("8_ifugv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.702750464542442)
-centre_rotation = NodePath("../soleil")
 periode_revolution_s = 7.0
 etapes_calcul_par_ecran = 150
 v_ms = Vector3(-2938282.257, 7808870.348, 3419627.259)
 r_m = Vector3(-1047200000, -299200000, -149600000)
 
-[node name="Saturne" parent="." unique_id=1235135298 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("7_6xcrf")]
+[node name="Saturne" parent="." unique_id=1235135298 instance=ExtResource("7_6xcrf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.818081718222032)
-centre_rotation = NodePath("../soleil")
 periode_revolution_s = 8.0
 etapes_calcul_par_ecran = 150
 v_ms = Vector3(16455765.807, 664879.427, -434595.667)
 r_m = Vector3(-6820413.6, 748000000, 299200000)
 
-[node name="Uranus" parent="." unique_id=1029649281 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("9_xk7o8")]
+[node name="Uranus" parent="." unique_id=1029649281 instance=ExtResource("9_xk7o8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.91244803531974)
-centre_rotation = NodePath("../soleil")
 periode_revolution_s = 9.0
 etapes_calcul_par_ecran = 150
 v_ms = Vector3(17101599.209, 26725036.325, 11462244.281)
 r_m = Vector3(-448800000, 299200000, 149600000)
 
-[node name="Neptune" parent="." unique_id=461063366 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("6_3s88q")]
+[node name="Neptune" parent="." unique_id=461063366 instance=ExtResource("6_3s88q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.103028219821985)
-centre_rotation = NodePath("../soleil")
 periode_revolution_s = 10.0
 etapes_calcul_par_ecran = 150
 v_ms = Vector3(51716884.354, 1296861.173, -756646.639)

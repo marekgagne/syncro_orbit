@@ -7,7 +7,9 @@ var vitesse_de_rotation = 360 / periode_rot_s
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if not transform.is_finite():
+		printerr("Invalid transform on: ", name)
+		transform = Transform3D.IDENTITY
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
