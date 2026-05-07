@@ -10,8 +10,9 @@ extends Node3D
 @export var v_i: Vector3
 @export var r_i: Vector3
 @export var mult: int
-var fast_forward = mult * 24 * 60 * 60
-var periode_relative = periode_revolution_s / fast_forward
+
+var acceleration_temps: float
+var periode_relative: float
 
 var position_réelle = r_p_m
 var G = 6.67e-11
@@ -26,27 +27,32 @@ func _ready() -> void:
 	if not transform.is_finite():
 		printerr("Invalid transform on: ", name)
 		transform = Transform3D.IDENTITY
-
-	
+	acceleration_temps = mult * 24 * 60 * 60
+	periode_relative = periode_revolution_s / acceleration_temps
 	position = conv_position(r_i)
 
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	appliquer_rk(delta)
 	position = conv_position(r_i)
 
 func calculer_acceleration_gravitationnelle(position_rellee: Vector3) -> Vector3:
 	var a_i = Vector3(0,0,0)
 	for autre in get_tree().get_nodes_in_group("planetes"):
-		if autre != self:
+		if autre.name == self.name:
+			a_i += Vector3(0,0,0)
+		else:
 			var masse_autre = autre.masse_kg
-			var direction = autre.r_i - position_rellee
+			var pos_autre = autre.r_i
+			var direction = pos_autre - position_rellee
 			var distance = direction.length()
 			if distance <= 0.1:
 				distance = 0.1
-			a_i += direction.normalized() * (G * masse_autre/(distance*distance))
+			var v_unit = direction.normalized()
+			a_i += v_unit * (G * masse_autre/(distance*distance))
 	return a_i
 	
 func conv_position(position_reelle : Vector3) -> Vector3:
@@ -68,8 +74,8 @@ func appliquer_rk(temps_dernier_ecran: float) -> void:
 	var v_plus_un = v_i + ((h/6) * (vk1 + 2 * vk2 + 2 * vk3 + vk4))
 	
 	var rk1 =  v_i
-	var rk2 = v_i + vk1 * (h/2)
-	var rk3 = v_i + vk2 * (h/2)
+	var rk2 = v_i + rk1 * (h/2)
+	var rk3 = v_i + rk2 * (h/2)
 	var rk4 = v_i + rk3 * h
 	var r_plus_un = r_i + ((h/6) * (rk1 + 2 * rk2 + 2 * rk3 + rk4))
 	
