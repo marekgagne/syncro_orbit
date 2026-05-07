@@ -40,7 +40,9 @@ func _process(delta: float) -> void:
 func calculer_acceleration_gravitationnelle(position_rellee: Vector3) -> Vector3:
 	var a_i = Vector3(0,0,0)
 	for autre in get_tree().get_nodes_in_group("planetes"):
-		if autre != self:
+		if autre.name == self.name:
+			a_i += Vector3(0,0,0)
+		else:
 			var masse_autre = autre.masse_kg
 			var direction = autre.r_i - position_rellee
 			var distance = direction.length()
