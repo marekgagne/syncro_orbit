@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cpx60o20it7f5" path="res://saturne.tscn" id="7_6xcrf"]
 [ext_resource type="PackedScene" uid="uid://dlh7j38urrne7" path="res://jupiter.tscn" id="8_ifugv"]
 [ext_resource type="PackedScene" uid="uid://dgtktjlb4mib6" path="res://uranus.tscn" id="9_xk7o8"]
+[ext_resource type="PackedScene" uid="uid://bu8sp1dbbvn8u" path="res://interface.tscn" id="12_xflmw"]
 
 [sub_resource type="Environment" id="Environment_873ud"]
 background_mode = 1
@@ -101,3 +102,7 @@ etapes_calcul_par_ecran = 150
 v_i = Vector3(-129, 5060, 2075)
 r_i = Vector3(4470000000000, 112000000000, -65400000000)
 mult = 100
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1607762668]
+
+[node name="Interface" parent="CanvasLayer" unique_id=120752286 instance=ExtResource("12_xflmw")]

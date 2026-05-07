@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bu8sp1dbbvn8u"]
+
+[ext_resource type="Script" uid="uid://cx1o8s84nslfw" path="res://menu.gd" id="1_rh14k"]
+
+[node name="Interface" type="Control" unique_id=120752286]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Controles" type="PanelContainer" parent="." unique_id=1952298715]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 330.0
+offset_bottom = 60.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Controles" unique_id=451277429]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controles/MarginContainer" unique_id=1731679456]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controles/MarginContainer/HBoxContainer" unique_id=1414281968]
+layout_mode = 2
+text = "Simulation système solaire"
+
+[node name="VSeparator" type="VSeparator" parent="Controles/MarginContainer/HBoxContainer" unique_id=533243873]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="Controles/MarginContainer/HBoxContainer" unique_id=351998619]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Menu" type="PanelContainer" parent="." unique_id=779891817 node_paths=PackedStringArray("nom", "masse", "vitesse_perihelie", "periode_revolution", "periode_rotation")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 330.0
+offset_bottom = 218.0
+script = ExtResource("1_rh14k")
+nom = NodePath("MarginContainer/GridContainer/Nom")
+masse = NodePath("MarginContainer/GridContainer/Masse")
+vitesse_perihelie = NodePath("MarginContainer/GridContainer/Vitesse_perihélie")
+periode_revolution = NodePath("MarginContainer/GridContainer/Periode_révolution")
+periode_rotation = NodePath("MarginContainer/GridContainer/Periode_rotation")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu" unique_id=1600567156]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Menu/MarginContainer" unique_id=555881584]
+layout_mode = 2
+columns = 2
+
+[node name="Nom" type="Label" parent="Menu/MarginContainer/GridContainer" unique_id=469963172]
+layout_mode = 2
+
+[node name="Masse" type="Label" parent="Menu/MarginContainer/GridContainer" unique_id=478975446]
+layout_mode = 2
+
+[node name="Vitesse_perihélie" type="Label" parent="Menu/MarginContainer/GridContainer" unique_id=356684139]
+layout_mode = 2
+
+[node name="Excentricité" type="Label" parent="Menu/MarginContainer/GridContainer" unique_id=1035670175]
+layout_mode = 2
+
+[node name="Periode_révolution" type="Label" parent="Menu/MarginContainer/GridContainer" unique_id=591676836]
+layout_mode = 2
+
+[node name="Periode_rotation" type="Label" parent="Menu/MarginContainer/GridContainer" unique_id=1232370957]
+layout_mode = 2
