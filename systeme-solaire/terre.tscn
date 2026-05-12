@@ -14,9 +14,9 @@ v_p_ms = 30287.0
 r_p_m = 147098074000.0
 v_a_ms = 29291.0
 r_a_m = 152097701000.0
+etapes_calcul_par_ecran = 150
 
 [node name="Planet" parent="." index="0" unique_id=1420857609]
-rayon_m = 6378137.0
 periode_rot_s = 86164.084
 
 [node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
