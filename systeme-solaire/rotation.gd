@@ -1,7 +1,9 @@
 extends RigidBody3D
 
 @export var periode_rot_s: float
-var vitesse_de_rotation = 360 / periode_rot_s
+var mult = 30
+var acceleration_temps = mult * 24 * 60 * 60
+var vitesse_de_rotation = 360 * acceleration_temps / periode_rot_s
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
