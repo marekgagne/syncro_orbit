@@ -17,10 +17,10 @@ var mult= 30
 var acceleration_temps: float
 var periode_relative: float
 
-var position_réelle = r_p_m
+var position_reelle = r_p_m
 var G = 6.67e-11
-var r_a_sim = 4
-var r_p_sim = 10
+var r_a_sim = 10
+var r_p_sim = 2
 
 
 
@@ -32,6 +32,7 @@ func _ready() -> void:
 	periode_relative = periode_revolution_s / acceleration_temps
 	#transformation de la position réelle en position simulée
 	position = conv_position(r_i)
+	print(position.length(), position.normalized())
 
 	
 	
@@ -67,7 +68,8 @@ func conv_position(position_reelle : Vector3) -> Vector3:
 	distance_relle)
 	var facteur_distance_simulee = lerp (r_p_sim, r_a_sim,
 	ratio_distance)
-	return position_reelle.normalized() * facteur_distance_simulee
+	var v_unit_reelle = position_reelle.normalized()
+	return v_unit_reelle * facteur_distance_simulee
 	
 func appliquer_rk(temps_dernier_ecran: float) -> void:
 	#simule la vitesse et la position de l'astre grace à Runge-Kutta 4
