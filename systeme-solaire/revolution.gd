@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var nom_planète : String
 @export var masse_kg: float
 @export var v_p_ms: float
 @export var r_p_m: float
@@ -85,7 +86,7 @@ func appliquer_rk(temps_dernier_ecran: float) -> void:
 	
 func infos_planetes():
 	return{
-		"nom" : null,
+		"nom" : nom_planète,
 		"masse" : masse_kg,
 		"vitesse_perihelie" : v_p_ms,
 		"exentricite" : calculer_exentricite(),
@@ -96,3 +97,4 @@ func infos_planetes():
 
 func calculer_exentricite():
 	return ((r_a_m - r_p_m)/(r_a_m + r_p_m))
+	
