@@ -11,6 +11,7 @@ func _ready() -> void:
 		transform = Transform3D.IDENTITY
 	position = pos_initiale 
 	rotation = rot_initiale
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

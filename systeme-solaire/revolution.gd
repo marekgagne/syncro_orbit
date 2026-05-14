@@ -64,6 +64,8 @@ func calculer_acceleration_gravitationnelle(position_rellee: Vector3) -> Vector3
 func conv_position(position_reelle : Vector3) -> Vector3:
 	#convertie la position réelle en position simulée 
 	#à l'intérieur d'un minimum et maximum prédéterminé
+	#problème de bornes fait en sorte que les astres sont
+	#propulsés à de trop grandes distances 
 	var distance_relle = position_reelle.length()
 	var ratio_distance = inverse_lerp(r_p_m, r_a_m,
 	distance_relle)
