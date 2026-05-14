@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cnmq5nh2lloq7"]
 
+[ext_resource type="Script" uid="uid://p4hjkmjsn1eg" path="res://acceleration.gd" id="1_xflmw"]
 [ext_resource type="PackedScene" uid="uid://chylsyp4tbm5r" path="res://soleil.tscn" id="1_y105a"]
 [ext_resource type="PackedScene" uid="uid://4lcmv85aeary" path="res://Camera.tscn" id="1_yhig7"]
 [ext_resource type="PackedScene" uid="uid://i1ivbcwlvru2" path="res://terre.tscn" id="2_yhig7"]
@@ -16,6 +17,8 @@
 background_mode = 1
 
 [node name="Node3D" type="Node3D" unique_id=1291283643]
+script = ExtResource("1_xflmw")
+accel_jour_s = 395.697
 
 [node name="Camera3D" parent="." unique_id=1419789890 instance=ExtResource("1_yhig7")]
 transform = Transform3D(-0.5132828428818146, 0.09688358410563463, -0.8527334251300399, -0.01628928385889243, 0.9923288127973274, 0.12254871081986651, 0.8580649057236445, 0.0767925674990313, -0.5077671899033847, -3.8105694183804215, 1.3466604906767188, -0.26729704785630615)
@@ -32,7 +35,7 @@ r_p_m = 473288117.25
 v_a_ms = 6.21
 r_a_m = 1419864351.7
 periode_revolution_s = 374000000.0
-etapes_calcul_par_ecran = 150
+etapes_calcul_par_ecran = 300
 v_i = Vector3(12.43, 0.38, -0.093)
 r_i = Vector3(-459000000, -767000000, -311000000)
 
@@ -41,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.180358323089747)
 "nom_planète" = "Mercure"
 v_a_ms = 38860.0
 periode_revolution_s = 7600000.0
-etapes_calcul_par_ecran = 150
+etapes_calcul_par_ecran = 300
 v_i = Vector3(33310, -16770, -12410)
 r_i = Vector3(-32600000000, -56100000000, -26500000000)
 
@@ -49,7 +52,7 @@ r_i = Vector3(-32600000000, -56100000000, -26500000000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.3442007264866955)
 "nom_planète" = "Vénus"
 periode_revolution_s = 19400000.0
-etapes_calcul_par_ecran = 150
+etapes_calcul_par_ecran = 300
 v_i = Vector3(34530, 4585, -122)
 r_i = Vector3(12800000000, -98900000000, -45300000000)
 
@@ -57,6 +60,7 @@ r_i = Vector3(12800000000, -98900000000, -45300000000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.309101871782207)
 "nom_planète" = "Terre"
 periode_revolution_s = 31600000.0
+etapes_calcul_par_ecran = 300
 v_i = Vector3(-29770, -4950, -2145)
 r_i = Vector3(-26500000000, 132000000000, 57300000000)
 
@@ -64,7 +68,7 @@ r_i = Vector3(-26500000000, 132000000000, 57300000000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.505118650891797)
 "nom_planète" = "Mars"
 periode_revolution_s = 59300000.0
-etapes_calcul_par_ecran = 150
+etapes_calcul_par_ecran = 300
 v_i = Vector3(24460, 7380, 2725)
 r_i = Vector3(50500000000, -189000000000, -88000000000)
 
@@ -72,7 +76,7 @@ r_i = Vector3(50500000000, -189000000000, -88000000000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.702750464542442)
 "nom_planète" = "Jupiter"
 periode_revolution_s = 374000000.0
-etapes_calcul_par_ecran = 150
+etapes_calcul_par_ecran = 300
 v_i = Vector3(-12510, -3455, -1177)
 r_i = Vector3(-254000000000, 675000000000, 295000000000)
 
@@ -80,7 +84,7 @@ r_i = Vector3(-254000000000, 675000000000, 295000000000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.818081718222032)
 "nom_planète" = "Saturne"
 periode_revolution_s = 929000000.0
-etapes_calcul_par_ecran = 150
+etapes_calcul_par_ecran = 300
 v_i = Vector3(-790, 8890, 3710)
 r_i = Vector3(1420000000000, 57400000000, -37500000000)
 
@@ -88,7 +92,7 @@ r_i = Vector3(1420000000000, 57400000000, -37500000000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.91244803531974)
 "nom_planète" = "Uranus"
 periode_revolution_s = 2650000000.0
-etapes_calcul_par_ecran = 150
+etapes_calcul_par_ecran = 300
 v_i = Vector3(-5920, 2840, 1330)
 r_i = Vector3(1480000000000, 2310000000000, 990000000000)
 
@@ -96,7 +100,7 @@ r_i = Vector3(1480000000000, 2310000000000, 990000000000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.103028219821985)
 "nom_planète" = "Neptune"
 periode_revolution_s = 5200000000.0
-etapes_calcul_par_ecran = 150
+etapes_calcul_par_ecran = 300
 v_i = Vector3(-129, 5060, 2075)
 r_i = Vector3(4470000000000, 112000000000, -65400000000)
 

@@ -12,7 +12,8 @@ extends Node3D
 @export var r_i: Vector3
 
 #changer la vitesse de la simulation en jour/écran
-var mult= 30
+@onready var parent_node = get_parent()
+var mult_jour_s: float
 
 var acceleration_temps: float
 var periode_relative: float
@@ -26,13 +27,14 @@ var r_p_sim = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	mult_jour_s = parent_node.accel_jour_s
 	add_to_group("planetes")
 	#application de l'accélération de la simulation
-	acceleration_temps = mult * 24 * 60 * 60
+	acceleration_temps = mult_jour_s * 24 * 60 * 60
 	periode_relative = periode_revolution_s / acceleration_temps
 	#transformation de la position réelle en position simulée
 	position = conv_position(r_i)
-	print(position.length(), position.normalized())
+	
 
 	
 	
@@ -73,8 +75,8 @@ func conv_position(position_reelle : Vector3) -> Vector3:
 	
 func appliquer_rk(temps_dernier_ecran: float) -> void:
 	#simule la vitesse et la position de l'astre grace à Runge-Kutta 4
-	var nb_periode = temps_dernier_ecran  * periode_revolution_s / periode_relative
-	var h = nb_periode / etapes_calcul_par_ecran
+	var temps_reel_par_ecran = temps_dernier_ecran  * acceleration_temps
+	var h = temps_reel_par_ecran / etapes_calcul_par_ecran
 	var vk1 =  calculer_acceleration_gravitationnelle(r_i)
 	var vk2 = calculer_acceleration_gravitationnelle(r_i + vk1 * (h/2))
 	var vk3 = calculer_acceleration_gravitationnelle(r_i + vk2 * (h/2))
@@ -85,7 +87,7 @@ func appliquer_rk(temps_dernier_ecran: float) -> void:
 	var rk2 = v_i + rk1 * (h/2)
 	var rk3 = v_i + rk2 * (h/2)
 	var rk4 = v_i + rk3 * h
-	var r_plus_un = r_i + ((h/6) * (rk1 + 2 * rk2 + 2 * rk3 + rk4))
+	var r_plus_un = r_i + ((h/6) * (rk1 + (2 * rk2) + (2 * rk3) + rk4))
 	
 	r_i = r_plus_un
 	v_i = v_plus_un
