@@ -18,7 +18,7 @@ var mult_jour_s: float
 var acceleration_temps: float
 var periode_relative: float
 
-var position_reelle = r_p_m
+
 var G = 6.67e-11
 var r_a_sim = 10
 var r_p_sim = 2
@@ -31,7 +31,6 @@ func _ready() -> void:
 	add_to_group("planetes")
 	#application de l'accélération de la simulation
 	acceleration_temps = mult_jour_s * 24 * 60 * 60
-	periode_relative = periode_revolution_s / acceleration_temps
 	#transformation de la position réelle en position simulée
 	position = conv_position(r_i)
 	
@@ -65,6 +64,8 @@ func calculer_acceleration_gravitationnelle(position_rellee: Vector3) -> Vector3
 func conv_position(position_reelle : Vector3) -> Vector3:
 	#convertie la position réelle en position simulée 
 	#à l'intérieur d'un minimum et maximum prédéterminé
+	#problème de bornes fait en sorte que les astres sont
+	#propulsés à de trop grandes distances 
 	var distance_relle = position_reelle.length()
 	var ratio_distance = inverse_lerp(r_p_m, r_a_m,
 	distance_relle)

@@ -19,7 +19,6 @@ radius = 1.0
 [node name="soleil" unique_id=643819563 instance=ExtResource("1_r1vuo")]
 
 [node name="Planet" parent="." index="0" unique_id=1420857609]
-rayon_m = 695700000.0
 periode_rot_s = 2419200.0
 
 [node name="MeshInstance3D" parent="Planet" index="0" unique_id=315371791]
@@ -32,4 +31,4 @@ shape = SubResource("SphereShape3D_r1vuo")
 light_energy = 16.0
 light_size = 1.0
 shadow_enabled = true
-omni_range = 50.797
+omni_range = 4096.0
