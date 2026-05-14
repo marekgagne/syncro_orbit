@@ -30,6 +30,8 @@ func _process(delta: float) -> void:
 		rotation_gauche(delta)
 	if Input.is_action_pressed("rotation droite"):
 		rotation_droite(delta)
+		
+	
 	
 	
 	#Inclinaison
@@ -121,3 +123,4 @@ func reset_cam():
 	
 	position = pos_initiale 
 	rotation = rot_initiale
+	

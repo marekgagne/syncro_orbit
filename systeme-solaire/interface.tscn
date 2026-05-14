@@ -35,12 +35,6 @@ text = "Simulation système solaire"
 [node name="VSeparator" type="VSeparator" parent="Controles/MarginContainer/HBoxContainer" unique_id=533243873]
 layout_mode = 2
 
-[node name="HSlider" type="HSlider" parent="Controles/MarginContainer/HBoxContainer" unique_id=351998619]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-size_flags_stretch_ratio = 3.5
-
 [node name="Menu" type="PanelContainer" parent="." unique_id=779891817 node_paths=PackedStringArray("nom", "masse", "vitesse_perihelie", "excentricite", "periode_revolution", "periode_rotation")]
 layout_mode = 0
 offset_left = 10.0

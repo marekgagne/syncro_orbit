@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func afficher_infos(nom_planètes:String, donnees: Dictionary):
-	nom.text = donnees[nom]
+	nom.text = donnees["nom"]
 	masse.text = donnees["masse"]
 	vitesse_perihelie.text = donnees["vitesse_perihelie"]
 	excentricite.text = donnees["exentricite"]
