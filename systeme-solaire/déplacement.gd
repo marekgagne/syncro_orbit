@@ -43,30 +43,81 @@ func _process(delta: float) -> void:
 		reset_cam()
 		
 func avancer(delta):
-	""" Lorsque cette fonction est appelé, l'objet interpellé avance"""
+	"""
+	Déplace l'objet interpellé vers l'avant
+		
+	Paramètre :
+	position -- position de la caméra
+	"""
+	
 	position -= global_transform.basis.z * vitesse * delta
 
 func reculer(delta):
+	"""
+	Déplace l'objet interpellé vers l'arrière
+		
+	Paramètre :
+	position -- position de la caméra
+	"""
+	
 	position += global_transform.basis.z * vitesse * delta
 
 func droite(delta):
+	"""
+	Déplace l'objet interpellé vers la droite
+		
+	Paramètre :
+	position -- position de la caméra
+	"""
+	
 	position += global_transform.basis.x * vitesse * delta
 
 func gauche(delta):
+	"""
+	Déplace l'objet interpellé vers la gauche
+		
+	Paramètre :
+	position -- position de la caméra
+	"""
+	
 	position -= global_transform.basis.x * vitesse *  delta
 
 func rotation_gauche(delta):
+	"""
+	Fait tourner l'objet sur lui-même vers la gauche
+	"""
+	
 	rotate_y(vitesse_rotation * delta)
 	
 func rotation_droite(delta):
+	"""
+	Fait tourner l'objet sur lui-même vers la droite
+	"""
+	
 	rotate_y(-vitesse_rotation * delta)
 	
 func inclinaison_bas(delta):
+	"""
+	Fait tourner l'objet sur lui-même vers le bas
+	"""
+	
 	rotate_x(-vitesse_rotation * delta)
 	
 func inclinaison_haut(delta):
+	"""
+	Fait tourner l'objet sur lui-même vers le haut
+	"""
+	
 	rotate_x(vitesse_rotation * delta)
 	
 func reset_cam():
+	"""
+	Réinitialise la position et la rotation de la caméra
+		
+	Paramètre :
+	position -- position de la caméra
+	rotation -- rotation de la caméra
+	"""
+	
 	position = pos_initiale 
 	rotation = rot_initiale
