@@ -18,7 +18,7 @@ var mult_jour_s: float
 var acceleration_temps: float
 var periode_relative: float
 
-var position_reelle = r_p_m
+
 var G = 6.67e-11
 var r_a_sim = 10
 var r_p_sim = 2
@@ -31,7 +31,6 @@ func _ready() -> void:
 	add_to_group("planetes")
 	#application de l'accélération de la simulation
 	acceleration_temps = mult_jour_s * 24 * 60 * 60
-	periode_relative = periode_revolution_s / acceleration_temps
 	#transformation de la position réelle en position simulée
 	position = conv_position(r_i)
 	
